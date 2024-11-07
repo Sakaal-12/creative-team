@@ -469,7 +469,7 @@ nav ul li a:hover {
 /* ------------ cta css starts ---------------- */
 .cta-bg {
 	background: linear-gradient(90deg, rgb(1 1 1 / 76%) 0%, rgb(0 0 0 / 70%) 35%, rgb(0 0 0 / 77%) 100%),
-		url(../img/cta-bg.png) no-repeat center / cover;
+		url(../img/cta-bg.png) no-repeat center / cover fixed;
 }
 
 /* ------------ footer css starts ----------------- */

@@ -175,6 +175,13 @@ summaryElements.forEach((summary, index) => {
     });
 });
 
-document.querySelector('.view_all').addEventListener('click', function() {
-    document.querySelector('.viewall').classList.toggle('look');
+// show more toggle button
+document.querySelectorAll('.view_all').forEach(button => {
+    button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const targetDiv = document.querySelector(`.viewall[data-id="${targetId}"]`);
+        if (targetDiv) {
+            targetDiv.classList.toggle('look');
+        }
+    });
 });

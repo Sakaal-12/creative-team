@@ -90,6 +90,16 @@ $('.projects_slider').slick({
     ]
 });
 
+// testimonial
+$('.video_slider').slick({
+    infinite: true,
+    slidesToShow: 2,
+    prevArrow: false,
+    nextArrow: false,
+    dots: true,
+    slidesToScroll: 1
+});
+
 // back to top
 const calcScrollValue = () => {
     const scrollProgress = document.getElementById("btt-btn");

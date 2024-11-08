@@ -262,7 +262,7 @@ nav {
 .dropdown svg {
 	position: absolute;
 	right: 5px;
-	top: 4px;
+	top: 2px;
 	cursor: pointer;
 	transition: 0.5s all cubic-bezier(0.23, 1, 0.32, 1);
 }

@@ -503,7 +503,7 @@ nav ul {
 .testimonial_slider .slick-dots li button {
 	width: 100px;
 	height: 100px;
-	background: url(https://craftohtml.themezaa.com/images/team-25.webp) no-repeat center / cover;
+	background: url(../img/team-25.webp) no-repeat center / cover;
 	border-radius: 50%;
 	margin-right: 20px;
 	border: 0;

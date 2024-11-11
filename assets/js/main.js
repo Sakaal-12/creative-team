@@ -181,7 +181,7 @@ document.querySelectorAll('.view_all').forEach(button => {
         const targetId = button.getAttribute('data-target');
         const targetDiv = document.querySelector(`.viewall[data-id="${targetId}"]`);
         if (targetDiv) {
-            targetDiv.classList.toggle('look');
+            targetDiv.classList.toggle('look_out');
         }
     });
 });

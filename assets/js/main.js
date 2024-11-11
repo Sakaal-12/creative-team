@@ -252,7 +252,7 @@ document.querySelectorAll('.view_all').forEach(button => {
 
 // lightboxImage.addEventListener('click', (e) => e.stopPropagation());
 
-// updated js of lightbox
+// setup of lightbx gallery js
 const lightboxContainer = document.querySelector('.lightbox-container');
 
 if (lightboxContainer) {

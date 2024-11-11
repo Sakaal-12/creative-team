@@ -150,7 +150,7 @@ nav ul li a:hover {
 
 /* ------------ hero css starts ----------------- */
 .hero {
-    background: linear-gradient(360deg, rgb(1 1 1 / 72%) 0%, rgb(0 0 0 / 80%) 35%, rgb(0 0 0 / 48%) 100%), url(../img/her-img-bg.png) no-repeat center / cover fixed;
+    background: linear-gradient(360deg, rgb(1 1 1 / 72%) 0%, rgb(0 0 0 / 80%) 35%, rgb(0 0 0 / 48%) 100%), url(../img/her-img-bg.webp) no-repeat center / cover fixed;
 }
 
 .hero-content>div {
@@ -181,7 +181,7 @@ nav ul li a:hover {
 
 .success::after {
 	content: '';
-	background: url(../img/net-img.png) no-repeat center;
+	background: url(../img/net-img.webp) no-repeat center;
 	position: absolute;
 	right: -20px;
 	bottom: -20px;
@@ -203,7 +203,7 @@ nav ul li a:hover {
 	height: 75%;
 	z-index: -4;
 	position: absolute;
-	background: url(../img/project-bg.png) no-repeat top / cover;
+	background: url(../img/project-bg.webp) no-repeat top / cover;
 }
 
 .project-cards::before {
@@ -275,25 +275,25 @@ nav ul li a:hover {
 }
 
 .testimonial_slider .slick-dots li:nth-child(1) button {
-	background: url(../img/avtar-27.jpg) no-repeat center / cover;
+	background: url(../img/avtar-27.webp) no-repeat center / cover;
 	top: 17%;
 	left: 24%;
 }
 
 .testimonial_slider .slick-dots li:nth-child(2) button {
-	background: url(../img/avtar-28.jpg) no-repeat center / cover;
+	background: url(../img/avtar-28.webp) no-repeat center / cover;
 	right: 5%;
 	top: 39%;
 }
 
 .testimonial_slider .slick-dots li:nth-child(3) button {
-	background: url(../img/avtar-29.jpg) no-repeat center / cover;
+	background: url(../img/avtar-29.webp) no-repeat center / cover;
 	top: 39%;
 	left: 5%;
 }
 
 .testimonial_slider .slick-dots li:nth-child(4) button {
-	background: url(../img/team-24.jpg) no-repeat center / cover;
+	background: url(../img/team-24.webp) no-repeat center / cover;
 	left: 46.77%;
 	top: 4%;
 }
@@ -469,7 +469,7 @@ nav ul li a:hover {
 /* ------------ cta css starts ---------------- */
 .cta-bg {
 	background: linear-gradient(90deg, rgb(1 1 1 / 76%) 0%, rgb(0 0 0 / 70%) 35%, rgb(0 0 0 / 77%) 100%),
-		url(../img/cta-bg.png) no-repeat center / cover fixed;
+		url(../img/cta-bg.webp) no-repeat center / cover fixed;
 }
 
 /* ------------ footer css starts ----------------- */
@@ -864,7 +864,7 @@ footer ul a:hover:not(.social ul li a) {
 	bottom: 0;
 	z-index: -2;
 	filter: brightness(30) invert(8);
-	background: url(../img/feture-bg-shape.png) no-repeat;
+	background: url(../img/feture-bg-shape.webp) no-repeat;
 }
 
 .team-member a {

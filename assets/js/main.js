@@ -97,7 +97,13 @@ $('.video_slider').slick({
     prevArrow: false,
     nextArrow: false,
     dots: true,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [{
+        breakpoint: 600,
+        settings: {
+            slidesToShow: 1,
+        }
+    }]
 });
 
 // back to top
@@ -111,9 +117,9 @@ const calcScrollValue = () => {
     // Toggle the visibility of the scroll progress button
     if (pos > 100) {
         scrollProgress.style.display = "grid";
-        scrollProgress.classList.add("back"); // Add class when scrolled past threshold
+        scrollProgress.classList.add("back");
     } else {
-        scrollProgress.classList.remove("back"); // Remove class when scrolled back up
+        scrollProgress.classList.remove("back");
     }
 
     // Add event listener for the click event
@@ -185,3 +191,141 @@ document.querySelectorAll('.view_all').forEach(button => {
         }
     });
 });
+
+// setup of lightbx gallery js
+
+// const lightboxEnabled = document.querySelectorAll('.lightbox_img_wrap');
+// const lightboxArray = Array.from(lightboxEnabled);
+// const lastImage = lightboxArray.length - 1;
+// const lightboxContainer = document.querySelector('.lightbox-container');
+// const lightboxImage = document.querySelector('.lightbox-image');
+// const lightboxTitle = document.querySelector('.lightbox-image-wrapper .lightbx_title');
+// const lightboxBtnRight = document.querySelector('#right');
+// const lightboxBtnLeft = document.querySelector('#left');
+// const closeBtn = document.querySelector('#close');
+// let activeImage;
+
+// // Functions
+// const showLightBox = () => lightboxContainer.classList.add('active');
+// const hideLightBox = () => lightboxContainer.classList.remove('active');
+
+// const setActiveImage = (imageWrap) => {
+//     const image = imageWrap.querySelector('img');
+//     const title = imageWrap.querySelector('.lightbx_title').textContent;
+//     lightboxImage.src = image.src;
+//     lightboxImage.title = title;
+//     lightboxTitle.textContent = title;
+//     activeImage = lightboxArray.indexOf(imageWrap);
+// };
+
+// const transitionSlides = (direction) => {
+//     const slideClass = direction === 'left' ? 'slideright' : 'slideleft';
+//     lightboxImage.classList.add(slideClass);
+
+//     setTimeout(() => {
+//         activeImage = direction === 'left' ?
+//             (activeImage === 0 ? lastImage : activeImage - 1) :
+//             (activeImage === lastImage ? 0 : activeImage + 1);
+//         setActiveImage(lightboxArray[activeImage]);
+//     }, 250);
+
+//     setTimeout(() => lightboxImage.classList.remove(slideClass), 500);
+// };
+
+// // Event Listeners
+// lightboxEnabled.forEach(imageWrap => {
+//     imageWrap.addEventListener('click', () => {
+//         showLightBox();
+//         setActiveImage(imageWrap);
+//     });
+// });
+
+// lightboxContainer.addEventListener('click', hideLightBox);
+// closeBtn.addEventListener('click', hideLightBox);
+
+// [lightboxBtnLeft, lightboxBtnRight].forEach(btn => {
+//     btn.addEventListener('click', (e) => {
+//         e.stopPropagation();
+//         transitionSlides(e.currentTarget.id === 'left' ? 'left' : 'right');
+//     });
+// });
+
+// lightboxImage.addEventListener('click', (e) => e.stopPropagation());
+
+const lightboxContainer = document.querySelector('.lightbox-container');
+
+if (lightboxContainer) {
+    const lightboxEnabled = document.querySelectorAll('.lightbox_img_wrap');
+    const lightboxArray = Array.from(lightboxEnabled);
+    const lastImage = lightboxArray.length - 1;
+    const lightboxImage = document.querySelector('.lightbox-image');
+    const lightboxTitle = document.querySelector('.lightbox-image-wrapper .lightbx_title');
+    const lightboxBtnRight = document.querySelector('#right');
+    const lightboxBtnLeft = document.querySelector('#left');
+    const closeBtn = document.querySelector('#close');
+    let activeImage;
+
+    // Functions
+    const showLightBox = () => lightboxContainer.classList.add('active');
+    const hideLightBox = () => lightboxContainer.classList.remove('active');
+
+    const setActiveImage = (imageWrap) => {
+        const image = imageWrap.querySelector('img');
+        const title = imageWrap.querySelector('.lightbx_title').textContent;
+        lightboxImage.src = image.src;
+        lightboxImage.title = title;
+        lightboxTitle.textContent = title;
+        activeImage = lightboxArray.indexOf(imageWrap);
+    };
+
+    const transitionSlides = (direction) => {
+        const slideClass = direction === 'left' ? 'slideright' : 'slideleft';
+        lightboxImage.classList.add(slideClass);
+
+        setTimeout(() => {
+            activeImage = direction === 'left' ?
+                (activeImage === 0 ? lastImage : activeImage - 1) :
+                (activeImage === lastImage ? 0 : activeImage + 1);
+            setActiveImage(lightboxArray[activeImage]);
+        }, 250);
+
+        setTimeout(() => lightboxImage.classList.remove(slideClass), 500);
+    };
+
+    // Event Listeners
+    lightboxEnabled.forEach(imageWrap => {
+        imageWrap.addEventListener('click', () => {
+            showLightBox();
+            setActiveImage(imageWrap);
+        });
+    });
+
+    lightboxContainer.addEventListener('click', hideLightBox);
+    closeBtn.addEventListener('click', hideLightBox);
+
+    [lightboxBtnLeft, lightboxBtnRight].forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            transitionSlides(e.currentTarget.id === 'left' ? 'left' : 'right');
+        });
+    });
+
+    lightboxImage.addEventListener('click', (e) => e.stopPropagation());
+
+    // Optional: Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (lightboxContainer.classList.contains('active')) {
+            switch (e.key) {
+                case 'ArrowLeft':
+                    transitionSlides('left');
+                    break;
+                case 'ArrowRight':
+                    transitionSlides('right');
+                    break;
+                case 'Escape':
+                    hideLightBox();
+                    break;
+            }
+        }
+    });
+}
